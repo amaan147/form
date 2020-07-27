@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Registration form</title>
+</head>
+
+<body>
+
+    <body>
+      <div class= "my-4"><form name="school" method="POST" action="/smartworld/admin/staff/staff_registration.php?"
+            enctype="multipart/form-data" class="form-horizontal"></div>  
+            <div class="col-sm-12">
+                <label class="control-label">Full Name: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+            </div>
+            <div class="col-sm-3">
+                <input name="firstname" type="text" class="form-control" onkeyup="sum()" id="firstname"
+                    placeholder="First Name" required="">
+            </div>
+            <div class="col-sm-3">
+                <input name="middlename" type="text" class="form-control" id="middlename" placeholder="Middle Name">
+            </div>
+            <div class="col-sm-3">
+                <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Surname">
+            </div>
+            <!--
+        <div class="col-sm-3">
+        <input name="mothername" type="text" class="form-control" id="mothername" placeholder="Mother Name" />
+        </div>
+        -->
+            <div class="col-sm-12">
+                <label class="control-label">DOB &amp; Pancard No: <i class="glyphicon-asterisk"
+                        style="color:#F00;"></i></label>
+            </div>
+            <div class="col-sm-6">
+                <input name="dob" type="text" class="form-control hasDatepicker" id="datepicker" onchange="sum()"
+                    placeholder="Date of Birth (YYYY/MM/DD)">
+            </div>
+
+            <div class="col-sm-6">
+                <input name="panno" type="text" class="form-control" id="panno" placeholder="Pancard No">
+            </div>
+            <div class="col-sm-12">
+                <label class="control-label">Current Address:</label>
+            </div>
+            <div class="col-sm-12">
+                <textarea name="address" class="form-control" id="address" placeholder="Address"></textarea>
+            </div>
+            <div class="col-sm-12">
+                <label class="control-label">Permanent Address:</label>
+            </div>
+            <div class="col-sm-12">
+                <textarea name="paddress" class="form-control" id="paddress" placeholder="Permanent Address"></textarea>
+            </div>
+            <div class="col-sm-12">
+                <label class="control-label">Contact No : <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+            </div>
+            <div class="col-sm-4">
+                <input name="contactno1" maxlength="10" pattern="[0-9]{10}" title="Enter your mobile number" type="text"
+                    class="form-control" placeholder="Whatsapp No" id="contactno1" required="">
+            </div>
+            <div class="col-sm-4">
+                <input name="contactno2" maxlength="10" pattern="[0-9]{10}" title="Enter your mobile number" type="text"
+                    class="form-control" placeholder="Mobile No" id="contactno2">
+            </div>
+            <div class="col-sm-4">
+                <input name="contactno3" maxlength="10" pattern="[0-9]{10}" title="Enter your mobile number" type="text"
+                    class="form-control" placeholder="Telephone No" id="contactno3">
+            </div>
+            <!--
+        <div class="col-sm-12">
+        <label class="control-label">Email ID : <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        </div>
+        
+        <div class="col-sm-12">
+        <input name="email" type="email" class="form-control" placeholder="Email-Id" id="email" />
+        </div>-->
+            <div class="col-sm-12">
+                <label class="control-label">Relative Name &amp; Number 1: <i class="glyphicon-asterisk"
+                        style="color:#F00;"></i></label>
+            </div>
+            <div class="col-sm-6">
+                <input name="relative1" type="text" class="form-control" placeholder="Relative Name" id="relative1">
+            </div>
+            <div class="col-sm-6">
+                <input name="relativeno1" type="text" class="form-control" placeholder="Mobile no" id="relativeno1">
+            </div>
+            <div class="col-sm-12">
+                <label class="control-label">Relative Name &amp; Number 2: </label>
+            </div>
+            <div class="col-sm-6">
+                <input name="relative2" type="text" class="form-control" placeholder="Relative Name" id="relative2">
+            </div>
+            <div class="col-sm-6">
+                <input name="relativeno2" type="text" pattern="[0-9]{10}" class="form-control" placeholder="Mobile No"
+                    id="relativeno2">
+            </div>
+            <div class="col-sm-12">
+                <label class="control-label">Qualification &amp; Aadhar No &amp; Expected CTC:<i
+                        class="glyphicon-asterisk" style="color:#F00;"></i></label>
+            </div>
+            <div class="col-sm-4">
+                <input name="qualification" type="text" class="form-control" id="qualification"
+                    placeholder="Qualification">
+            </div>
+            <div class="col-sm-4">
+                <input name="Aadharno" type="text" class="form-control" pattern="[0-9]{12}"
+                    title="12-digits Aadhar Card Number" id="Aadharno" placeholder="Aadharcard No">
+            </div>
+            <div class="col-sm-4">
+                <input name="salary" type="text" class="form-control" id="salary" value="" placeholder="Excepted CTC">
+            </div>
+            <!--
+        <div class="col-sm-3">
+        <input name="board" type="text" class="form-control" id="board" placeholder="Board" />
+        </div>
+        <div class="col-sm-3">
+        <input name="year" type="text" class="form-control" id="year" placeholder="Passing Year" />
+        </div>
+        <table class="col-sm-12">
+        <tr>
+        <td>
+        <label class="control col-sm-6">Languages Known: <i class="glyphicon-asterisk" style="color:#F00;"></i></label></td><td>
+        <label class="control col-sm-2">Read</i></label></td>
+        <td>
+        <label class="control col-sm-2">Write</i></label></td>
+        <td>
+        <label class="control col-sm-2">Speak</i></label></td>
+        </tr>
+        <Tr>
+        <td>
+        <div class="col-sm-8">
+        <input name="Languageknown1" type="text" class="form-control checkbox" id="Languageknown1" placeholder="Language known" />
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="read1" type="checkbox" id="read1"/>
+        </div></td>
+        <td>
+        <div class="col-sm-2">
+        <input name="write1" type="checkbox" id="write1"/>
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="speak1" type="checkbox" id="speak1"/>
+        </div>
+        </td>
+        </Tr>
+        <Tr>
+        <td>
+        <div class="col-sm-8">
+        <input name="Languageknown2" type="text" class="form-control checkbox" id="Languageknown2" placeholder="Language known" />
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="read2" type="checkbox" id="read2"/>
+        </div></td>
+        <td>
+        <div class="col-sm-2">
+        <input name="write2" type="checkbox" id="write2"/>
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="speak2" type="checkbox" id="speak2"/>
+        </div>
+        </td>
+        </Tr>
+        <Tr>
+        <td>
+        <div class="col-sm-8">
+        <input name="Languageknown3" type="text" class="form-control checkbox" id="Languageknown3" placeholder="Language known" />
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="read3" type="checkbox" id="read3"/>
+        </div></td>
+        <td>
+        <div class="col-sm-2">
+        <input name="write3" type="checkbox" id="write3"/>
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="speak3" type="checkbox" id="speak3"/>
+        </div>
+        </td>
+        </Tr>
+        <Tr>
+        <td>
+        <div class="col-sm-8">
+        <input name="Languageknown4" type="text" class="form-control checkbox" id="Languageknown4" placeholder="Language known" />
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="read4" type="checkbox" id="read4"/>
+        </div></td>
+        <td>
+        <div class="col-sm-2">
+        <input name="write4" type="checkbox" id="write4"/>
+        </div>
+        </td>
+        <td>
+        <div class="col-sm-2">
+        <input name="speak4" type="checkbox" id="speak4"/>
+        </div>
+        </td>
+        </Tr>
+        </table>
+        <label class="control col-sm-12">Hobbies: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        <div class="col-sm-12">
+        <input name="hobbies" type="text" class="form-control" id="hobbies" placeholder="Hobbies" />
+        </div>
+        <label class="control col-sm-12">Lastly Worked Company Details: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        <div class="col-sm-6">
+        <input name="comany" type="text" class="form-control" id="comany" placeholder="Company Name" />
+        </div>
+        <div class="col-sm-6">
+        <input name="designation" type="text" class="form-control" id="designation" placeholder="designation" />
+        </div>-->
+            <div class="col-sm-6">
+                <input name="username" type="hidden" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="col-sm-6">
+                <input name="password" type="hidden" class="form-control" id="password" placeholder="Password">
+            </div>
+            <!--
+        <label class="control col-sm-12">Increment Month & Desigination: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        <div class="col-sm-6">
+        <input name="incmonth" type="text" class="form-control" id="incmonth" placeholder="Incremental Month" />
+        </div>
+        <div class="col-sm-6">
+        <select name="designation" id="designation" class="form-control" placeholder="Designation">
+                         <option>Designation</option>
+                          <option value="PROJECT MANAGAR">PROJECT IN CHARGE</option>
+                          <option value="MARKETING MANAGER">MARKETI MANAGER</option>
+                          <option value="Sr.HARDWEAR ENG">Sr.HARDWEAR ENG</option>
+                          <option value="HR.MANAGER">HR.MANAGER</option>
+                          <option value="AREA CO-ORDINATER">AREA CO-ORDINATER</option>
+                          <option value="ASSISTENT HARD.ENG">ASSISTENT HARD.ENG</option>
+                          <option value="PRO">PUBLIC RELATION OFFICER</option>
+                          <option value="CONCELLERS">CONCELLERS</option>
+                          <option value="TRAINER">TRAINER</option>
+                          <option value="AISST BR.CO-OR">ASSISTENT BR.CO-ORDINATER</option>
+                          <option value="BRANCH CO-ORDINATER">BRANCH CO-ORDINATER</option>
+                        </select>
+        </div>
+        <label class="control col-sm-12">Emp Code & Status: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        <div class="col-sm-6">
+        <input name="empcode" type="text" class="form-control" id="empcode" placeholder="Emp Code" />
+        </div>
+        <div class="col-sm-6">
+        <select name="status" id="status" class="form-control" placeholder="Status">
+                          <option placeholder="Status">Status</option>
+                          <option value="Pending">Pending</option>
+                          <option value="Current">Current</option>
+                          <option value="Rejected">Rejected</option>
+                          <option value="Rejected">Inactive</option>
+                        </select>
+        </div>
+        
+        <label class="control col-sm-12">Comment: <i class="glyphicon-asterisk" style="color:#F00;"></i></label>
+        <div class="col-sm-12">
+        <textarea name="comment" class="form-control" id="comment" placeholder="Comment"></textarea>
+        </div>-->
+            <div class="col-sm-12">
+                <center>
+                    <input name="dor" type="hidden" id="dor" value="2020/07/27">
+                    <input name="status" type="hidden" id="status" value="current">
+                    <input name="id" type="hidden" id="id" value="17827">
+                    <input name="Submit" type="submit" class="btn btn-primary" value="Submit"></center>
+            </div>
+            <input type="hidden" name="MM_insert" value="school">
+        </form>
+
+
+        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+            style="position: absolute; top: 122px; left: 15px; z-index: 1; display: none;">
+            <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a
+                    class="ui-datepicker-prev ui-corner-all"
+                    onclick="DP_jQuery_1595848115304.datepicker._adjustDate('#datepicker', -1, 'M');" title="Prev"><span
+                        class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a
+                    class="ui-datepicker-next ui-corner-all"
+                    onclick="DP_jQuery_1595848115304.datepicker._adjustDate('#datepicker', +1, 'M');" title="Next"><span
+                        class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                <div class="ui-datepicker-title"><select class="ui-datepicker-month"
+                        onchange="DP_jQuery_1595848115304.datepicker._selectMonthYear('#datepicker', this, 'M');"
+                        onclick="DP_jQuery_1595848115304.datepicker._clickMonthYear('#datepicker');">
+                        <option value="0">Jan</option>
+                        <option value="1">Feb</option>
+                        <option value="2">Mar</option>
+                        <option value="3">Apr</option>
+                        <option value="4">May</option>
+                        <option value="5">Jun</option>
+                        <option value="6" selected="selected">Jul</option>
+                        <option value="7">Aug</option>
+                        <option value="8">Sep</option>
+                        <option value="9">Oct</option>
+                        <option value="10">Nov</option>
+                        <option value="11">Dec</option>
+                    </select><select class="ui-datepicker-year"
+                        onchange="DP_jQuery_1595848115304.datepicker._selectMonthYear('#datepicker', this, 'Y');"
+                        onclick="DP_jQuery_1595848115304.datepicker._clickMonthYear('#datepicker');">
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020" selected="selected">2020</option>
+                    </select></div>
+            </div>
+            <table class="ui-datepicker-calendar">
+                <thead>
+                    <tr>
+                        <th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                        <th><span title="Monday">Mo</span></th>
+                        <th><span title="Tuesday">Tu</span></th>
+                        <th><span title="Wednesday">We</span></th>
+                        <th><span title="Thursday">Th</span></th>
+                        <th><span title="Friday">Fr</span></th>
+                        <th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td
+                            class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                            &nbsp;</td>
+                        <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                        <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">1</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">2</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">3</a></td>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">4</a></td>
+                    </tr>
+                    <tr>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">5</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">6</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">7</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">8</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">9</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">10</a></td>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">11</a></td>
+                    </tr>
+                    <tr>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">12</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">13</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">14</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">15</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">16</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">17</a></td>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">18</a></td>
+                    </tr>
+                    <tr>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">19</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">20</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">21</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">22</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">23</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">24</a></td>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">25</a></td>
+                    </tr>
+                    <tr>
+                        <td class=" ui-datepicker-week-end "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">26</a></td>
+                        <td class=" ui-datepicker-days-cell-over  ui-datepicker-today"
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default ui-state-highlight ui-state-hover" href="#">27</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">28</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">29</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">30</a></td>
+                        <td class=" "
+                            onclick="DP_jQuery_1595848115304.datepicker._selectDay('#datepicker',6,2020, this);return false;">
+                            <a class="ui-state-default" href="#">31</a></td>
+                        <td
+                            class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                            &nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
